@@ -130,6 +130,11 @@ func main() {
 		log.Fatal("❌ Ошибка установки webhook:", err)
 	}
 
+	// Проверка текущего webhook (опционально, для отладки)
+	if info, err := bot.GetWebhookInfo(); err == nil {
+		log.Printf("📡 Текущий webhook URL: %s, pending updates: %d", info.URL, info.PendingUpdateCount)
+	}
+
 	updates := bot.ListenForWebhook("/")
 	go func() {
 		log.Println("📡 Слушаю порт :1984 для Telegram webhook...")
