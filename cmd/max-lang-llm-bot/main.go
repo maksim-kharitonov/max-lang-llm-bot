@@ -133,6 +133,8 @@ func main() {
 	// Проверка текущего webhook (опционально, для отладки)
 	if info, err := bot.GetWebhookInfo(); err == nil {
 		log.Printf("📡 Текущий webhook URL: %s, pending updates: %d", info.URL, info.PendingUpdateCount)
+	} else {
+		log.Printf("❌ Текущий webhook URL: %s, pending updates error: %+v", info.URL, err)
 	}
 
 	updates := bot.ListenForWebhook("/")
