@@ -16,7 +16,7 @@ import (
 
 const (
 	groqAPIURL = "https://api.groq.com/openai/v1/chat/completions"
-	modelName  = "llama3-70b-8192" // или "llama3-8b-8192"
+	modelName  = "llama-3.3-70b-versatile"
 )
 
 type GroqRequest struct {
