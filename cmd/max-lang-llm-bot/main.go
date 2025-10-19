@@ -145,7 +145,7 @@ func main() {
 		text := update.Message.Text
 		msgID := update.Message.MessageID
 
-		log.Printf("📩 От %d: %s", chatID, text)
+		//log.Printf("📩 От %d: %s", chatID, text)
 
 		response, err := callGroq(text)
 		if err != nil {
