@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  en-tutor-bot:
+    build: .
+    container_name: en-tutor-bot
+    ports:
+      - "1984:1984"
+    env_file:
+      - .env
+    restart: unless-stopped

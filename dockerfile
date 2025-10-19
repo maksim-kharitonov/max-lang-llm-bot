@@ -10,6 +10,5 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /app/max-lang-llm-bot .
-COPY --from=builder /app/.env .env
 EXPOSE 1984
 CMD ["./max-lang-llm-bot"]
